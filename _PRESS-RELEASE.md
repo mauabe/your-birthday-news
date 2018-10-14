@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > Your Birthday News Reader. All the news fit to POST.
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > You can put your birth date and subject and we'll give you the news about it on that day. Thanks to the New York Times.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > What was going on in the world on the day you were born? If you can't remember, you are not to blame. You can read the news as you emerged from your mother's womb. 
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > This is a trivia game where you are the "new born" main character.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > Your Birthday News Reader will give you an insight of the times when your parents were having you.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "I always wondered what my father was thinking when I was born. Now I know. Now I understand him better."
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > The project starts with a public API key from the New York Times, we can pull headlines and corresponding lead paraghraph dating from 1851. We can give a few suggestions on famous people's birthday dates news to get you curious. 
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "History is alive, and it is very intimate. This is my history, now I have a little insight of why I am who I am."
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Check your birth date, then see what was going on when you mother was born. This is a interactive history lesson.
