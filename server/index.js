@@ -1,29 +1,74 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-// UNCOMMENT THE DATABASE YOU'D LIKE TO USE
-// var items = require('../database-mysql');
-// var items = require('../database-mongo');
+const express = require("express");
+const bodyParser = require("body-parser");
+const axios = require("axios");
+const db = require("../database/index");
+const request = require("request");
+const path = require("path");
+const helper = require("../nyt/helper");
+const key = require("../nytkey.js");
 
-var app = express();
+const hostname = "127.0.0.1";
+const port = 3000;
 
-// UNCOMMENT FOR REACT
-// app.use(express.static(__dirname + '/../react-client/dist'));
+const app = express();
 
-// UNCOMMENT FOR ANGULAR
-// app.use(express.static(__dirname + '/../angular-client'));
-// app.use(express.static(__dirname + '/../node_modules'));
+app.use(express.static(path.resolve(__dirname + "/../client/dist")));
 
-app.get('/items', function (req, res) {
-  items.selectAll(function(err, data) {
-    if(err) {
-      res.sendStatus(500);
-    } else {
-      res.json(data);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post("/bday", function(req, res) {
+  let birthday = req.body.birthday;
+  //console.log ('in post1:', req.body.birthday);
+
+  request.get(
+    {
+      url: "https://api.nytimes.com/svc/search/v2/articlesearch.json",
+      qs: {
+        "api-key": `${key.TOKEN}`,
+        q: "news",
+        begin_date: `${birthday}`,
+        end_date: `${birthday}`,
+        fl: "headline, snippet, web_url"
+      }
+    },
+    function(err, response, body) {
+      body = JSON.parse(body);
+      //console.log('this is the whole data ', body.response.docs);
+      let data = body.response.docs;
+
+      db.saveAll(data, (err, data) => {
+        if (err) {
+          console.log("error in callback saveall", err);
+        } else {
+          console.log("success in callback saveall", data);
+        }
+      });
     }
-  });
+  );
 });
 
-app.listen(3000, function() {
-  console.log('listening on port 3000!');
+app.get("/bday", function(req, res) {
+  db.News.find({})
+    .limit(5)
+    .exec(function(err, data) {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.json(data);
+        //console.log('working in get', data)
+      }
+    });
 });
 
+// items.selectAll(function(err, data) {
+//   if(err) {
+//     res.status(500).send(err);
+//   } else {
+//     res.json(data);
+//   }
+// });
+
+app.listen(port, function() {
+  console.log(`listening on port ${port}!`);
+});
