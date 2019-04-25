@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import $ from "jquery";
 import NewsList from "./components/list.jsx";
 import NewsSearch from "./components/search.jsx";
 

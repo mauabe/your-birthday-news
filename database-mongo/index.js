@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const axios = require("axios");
 mongoose.connect(
   "mongodb://127.0.0.1:27017/bday",
   { useMongoClient: true }
@@ -23,7 +22,7 @@ let NewsSchema = mongoose.Schema({
 
 const News = mongoose.model("News", NewsSchema);
 
-let saveAll = (data, callback) => {
+const saveAll = (data, callback) => {
   //console.log("from the save function", data);
   data.forEach(
     item =>
