@@ -41,7 +41,7 @@ let saveAll = (data, callback) => {
   );
 };
 
-var selectAll = function(callback) {
+const selectAll = (callback) => {
   News.find({}, function(err, res) {
     if (err) {
       res.status(500).send(err);
