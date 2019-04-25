@@ -5,7 +5,7 @@ const key = require('../nytkey.js');
 
 //FROM NYTIMES
 
-let getNews = function (birthday, cb) {
+const getNews = function (birthday, cb) {
 
   request.get({
     url: 'https://api.nytimes.com/svc/search/v2/articlesearch.json',

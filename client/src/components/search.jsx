@@ -6,15 +6,15 @@ class NewsSearch extends React.Component {
     this.state = { birthday: '' };
   }
 
-  changeInput (e){
-    this.setState({ birthday: e.target.value });
+  changeInput (event){
+    this.setState({ birthday: event.target.value });
   }
 
   render(){
     return (
       <div>
         <h4>  </h4>
-        <input value={this.state.birthday} placeholder="YYYYMMDD" onChange={this.changeInput.bind(this)}/>
+        <input value={this.state.birthday} placeholder="YYYYMMDD no spaces no - no /" onChange={this.changeInput.bind(this)}/>
         <button onClick={() => (this.props.onSearch(this.state.birthday))}> Enter your birthday </button>
       </div>
     )
