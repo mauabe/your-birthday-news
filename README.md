@@ -1,3 +1,5 @@
+<img src="client/pics/YourBirdayNews.jpg">
+
 # Your Birthday News
 
 ## Give us your birth day, we'll give you the world
