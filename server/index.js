@@ -1,11 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
-const db = require("../database/index");
+const db = require("../database-mongo/index");
 const request = require("request");
 const path = require("path");
-const helper = require("../nyt/helper");
-const key = require("../nytkey.js");
+// const helper = require("../nyt/helper");
+const key = require("../nyt/nytkey");
 
 const hostname = "127.0.0.1";
 const port = 3000;
