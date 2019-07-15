@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const axios = require("axios");
+
 mongoose.connect(
   "mongodb://127.0.0.1:27017/bday",
   { useMongoClient: true }
@@ -7,15 +8,17 @@ mongoose.connect(
 
 const db = mongoose.connection;
 
-db.on("error", function() {
-  console.log("mongoose connection error, man");
+db.on("error", error => {
+  console.error.bind(console, "mongoose connection error, man");
 });
+
+// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 db.once("open", function() {
   console.log("mongoose connected successfully, yeah!");
 });
 
-let NewsSchema = mongoose.Schema({
+const NewsSchema = mongoose.Schema({
   headline: String,
   snippet: String,
   web_url: String
@@ -23,7 +26,7 @@ let NewsSchema = mongoose.Schema({
 
 const News = mongoose.model("News", NewsSchema);
 
-let saveAll = (data, callback) => {
+const saveAll = (data, callback) => {
   //console.log("from the save function", data);
   data.forEach(
     item =>
