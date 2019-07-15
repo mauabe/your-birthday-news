@@ -1,8 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+<<<<<<< HEAD
+import Heading from "./components/Heading.jsx";
+=======
+>>>>>>> f386e715fb0474649139cd44f22f731b3d5d901c
 import NewsList from "./components/list.jsx";
-import NewsSearch from "./components/search.jsx";
+import NewsSearch from "./components/NewsSearch.jsx/index.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -12,44 +16,47 @@ class App extends React.Component {
       birthday: ""
     };
     this.find = this.find.bind(this);
+    this.retrieveNews = this.retrieveNews.bind(this);
   }
 
-  componentDidMount() {
+  // componentDidMount() {
+  retrieveNews = () => {
     axios
-      .get("/bday")
-      .then(data => {
-        //console.log("Success in componentDidMount", data.data);
-        this.setState({
-          news: data.data
-        });
-      })
-      .catch(error => {
-        console.log("Error in componentDidMount", error);
+    .get("/bday")
+    .then(data => {
+      //console.log("Success in componentDidMount", data.data);
+      this.setState({
+        news: data.data
       });
+    })
+    .catch(error => {
+      console.log("Error in componentDidMount", error);
+    });
   }
 
-  find(birthday) {
-    const payload = {
-      birthday: birthday
-    };
-    axios
+    find = (birthday) => {
+      const payload = {
+        birthday: birthday
+      };
+      axios
       .post("/bday", payload)
-      .then(data => {
+      .then(response => {
         console.log("successfully posted");
       })
       .catch(err => {
         console.log(err);
       });
-  }
+    }
 
-  render() {
-    return (
-      <div>
-        <h4 />
-        <NewsSearch onSearch={this.find} />
-        <NewsList news={this.state.news} />
-      </div>
-    );
+    render() {
+      return (
+        <div>
+          <Heading />
+          <NewsSearch onSearch={this.find} />
+          <NewsList news={this.state.news} />
+        </div>
+      );
+    }
   }
 }
 
