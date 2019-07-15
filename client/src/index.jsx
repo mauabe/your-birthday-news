@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+<<<<<<< HEAD
 import Heading from "./components/Heading.jsx";
+=======
+>>>>>>> f386e715fb0474649139cd44f22f731b3d5d901c
 import NewsList from "./components/list.jsx";
 import NewsSearch from "./components/NewsSearch.jsx/index.js";
 

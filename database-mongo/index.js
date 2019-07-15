@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
+<<<<<<< HEAD
 const axios = require("axios");
 
+=======
+>>>>>>> f386e715fb0474649139cd44f22f731b3d5d901c
 mongoose.connect(
   "mongodb://127.0.0.1:27017/bday",
   { useMongoClient: true }

@@ -1,15 +1,20 @@
 {
-  "name": "birthday-news-reader",
-  "version": "1.0.0",
+  "name": "your-birthday-news",
+  "version": "1.0.1",
   "description": "Give us your birth day, we'll give you the world",
   "main": "index.js",
   "scripts": {
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauabe/your-birthday-news.git"
+  },
   "author": "Mauricio Feldman-Abe",
   "license": "ISC",
   "devDependencies": {
+<<<<<<< HEAD
     "axios": "^0.19.0",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
@@ -28,6 +33,25 @@
     "nodemon": "^1.18.4",
     "react": "^15.6.2",
     "react-dom": "^15.6.2",
+=======
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.30.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "bundle": "^2.1.0",
+    "express": "^4.16.4",
+    "mongod": "^2.0.0",
+    "mongoose": "^5.5.4",
+    "nodemon": "^1.18.11",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+>>>>>>> f386e715fb0474649139cd44f22f731b3d5d901c
     "request": "^2.88.0"
   }
 }
