@@ -10,7 +10,8 @@ class NewsSearch extends React.Component {
 
   changeInput = (e) => {
     e.preventDefault();
-    this.setState({ birthday: e.target.value });
+    const newBirthday = e.target.value;
+    this.setState(state => ({ birthday: newBirthday }));
   }
 
   render(){
