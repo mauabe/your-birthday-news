@@ -1,6 +1,6 @@
 const request = require('request');
 const axios = require('axios');
-const key = require('../nytkey.js');
+const key = require('../nytkeys.js');
 
 
 //FROM NYTIMES

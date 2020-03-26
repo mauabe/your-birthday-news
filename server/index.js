@@ -5,11 +5,10 @@ const db = require("../database-mongo/index");
 const request = require("request");
 const path = require("path");
 // const helper = require("../nyt/helper");
-const key = require("../nyt/nytkey");
+const key = require("../nyt/nytkeys");
 
 const hostname = "127.0.0.1";
 const port = 3000;
-
 const app = express();
 
 app.use(express.static(path.resolve(__dirname + "/../client/dist")));

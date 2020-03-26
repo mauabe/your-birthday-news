@@ -1,11 +1,8 @@
 .DS_Store
 /node_modules
 /dist
-<<<<<<< HEAD
+
 Icon
 Icon/r
 nytkeys.js
 nyt/nytkeys.js
-=======
-nytkey.js
->>>>>>> f386e715fb0474649139cd44f22f731b3d5d901c

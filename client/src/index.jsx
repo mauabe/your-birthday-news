@@ -27,33 +27,32 @@ class App extends React.Component {
       });
     })
     .catch(error => {
-      console.log("Error in componentDidMount", error);
+      console.log("Error retrieving news", error);
     });
   }
 
-    find = (birthday) => {
-      const payload = {
-        birthday: birthday
-      };
-      axios
-      .post("/bday", payload)
-      .then(response => {
-        console.log("successfully posted");
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    }
+  find = (birthday) => {
+    const payload = {
+      birthday: birthday
+    };
+    axios
+    .post("/bday", payload)
+    .then(response => {
+      console.log("successfully posted:", response);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
 
-    render() {
-      return (
-        <div>
-          <Heading />
-          <NewsSearch onSearch={this.find} />
-          <NewsList news={this.state.news} />
-        </div>
-      );
-    }
+  render() {
+    return (
+      <div>
+        <Heading />
+        <NewsSearch onSearch={this.find} />
+        <NewsList news={this.state.news} />
+      </div>
+    );
   }
 }
 
