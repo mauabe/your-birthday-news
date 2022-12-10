@@ -25,7 +25,7 @@
     "babel": "^6.23.0",
     "body-parser": "^1.17.2",
     "bundle": "^2.1.0",
-    "express": "^4.15.0",
+    "express": "^4.17.3",
     "jquery": "^3.5.0",
     "lodash": "^4.17.21",
     "minimist": "^1.2.5",
